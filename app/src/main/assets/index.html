@@ -1,0 +1,41 @@
+<!-- Tetris-based Android web application example
+     Copyright (C) 2023  Gonzalo Exequiel Pedone
+
+     This program is free software: you can redistribute it and/or modify
+     it under the terms of the GNU Affero General Public License as published by
+     the Free Software Foundation, either version 3 of the License, or
+     (at your option) any later version.
+
+     This program is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     GNU Affero General Public License for more details.
+
+     You should have received a copy of the GNU Affero General Public License
+     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Tetromino example for Android</title>
+        <script type="text/javascript" src="tetromino.js"></script>
+        <script type="text/javascript" src="render.js"></script>
+        <script type="text/javascript" src="input.js"></script>
+        <script type="text/javascript" src="main.js"></script>
+        <link rel="stylesheet" href="tetromino.css">
+    </head>
+    <body onload="main()">
+        <div id="mainLayout">
+            <div id="tetrominoCanvasContainer" class="gameColumn">
+                <canvas id="tetrominoCanvas" tabindex="1"></canvas>
+            </div>
+            <canvas id="nextPiece" class="controlsColumn" width="100" height="100"></canvas>
+            <p class="controlsColumn">Lines: <span id="lines">0<span></p>
+            <p class="controlsColumn">Level: <span id="level">0<span></p>
+            <p class="controlsColumn">Score: <span id="score">0<span></p>
+            <button id="startButton" class="controlsColumn" tabindex="2" autofocus>Start</button>
+            <p class="controlsColumn"></p>
+        </div>
+    </body>
+</html>
