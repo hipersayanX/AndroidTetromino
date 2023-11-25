@@ -32,8 +32,8 @@ function TetrominoPiece(boardWidth,
 
 TetrominoPiece.prototype.copy = function() {
     var piece = new TetrominoPiece(this.boardWidth,
-                                this.boardHeight,
-                                this.form);
+                                   this.boardHeight,
+                                   this.form);
     piece.cx = this.cx;
     piece.cy = this.cy;
 
@@ -75,7 +75,7 @@ TetrominoPiece.prototype.advance = function() {
 
 TetrominoPiece.prototype.rotateLeft = function() {
     // Do a simple matrix transpose for rotating the figure.
-    var form = Array(this.form.height, this.form.width).fill(0);
+    var form = Array(this.form.length).fill(0);
 
     for (var y = 0; y < this.form.height; y++)
         for (var x = 0; x < this.form.width; x++) {
@@ -94,7 +94,7 @@ TetrominoPiece.prototype.rotateLeft = function() {
 
 TetrominoPiece.prototype.rotateRight = function() {
     // Do a simple matrix transpose for rotating the figure.
-    var form = Array(this.form.height, this.form.width).fill(0);
+    var form = Array(this.form.length).fill(0);
 
     for (var y = 0; y < this.form.height; y++)
         for (var x = 0; x < this.form.width; x++) {
@@ -112,11 +112,11 @@ TetrominoPiece.prototype.rotateRight = function() {
 }
 
 function TetrominoBoard(width,
-                     height,
-                     linesPerLevel,
-                     frameRate,
-                     initialMoveTime,
-                     incrementPerLevel) {
+                        height,
+                        linesPerLevel,
+                        frameRate,
+                        initialMoveTime,
+                        incrementPerLevel) {
     this.width = width;
     this.height = height;
     this.board = Array(width * height).fill(0);
